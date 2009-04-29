@@ -1,0 +1,7 @@
+all: # these are the defaults, you should override them in your application/config/app.yml file
+  sf_propel_slope_one_recommendation_plugin:
+    rating_table:			sf_ratings	
+    rater_id_column:		user_id
+    rateable_model_column:	ratable_model
+    rateable_id_column:    	ratable_id
+    rating_column:			rating

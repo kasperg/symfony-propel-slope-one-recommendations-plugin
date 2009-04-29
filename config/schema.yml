@@ -1,0 +1,13 @@
+propel:
+  _attributes:    { package: plugins.sfPropelSlopeOneRecommendationPlugin.lib.model }
+  sf_slope_one:
+    _attributes:  { phpName: sfSlopeOne }
+    id:
+    item1_model:  { type: varchar(255), required: true }
+    item1_id:     { type: integer, required: true }
+    item2_model:  { type: varchar(255), required: true }
+    item2_id:     { type: integer, required: true }
+    times:        { type: integer, required: true }
+    rating:       { type: decimal, size: 14, scale: 4, required: true }
+    _uniques:
+      items:   [item1_model, item1_id, item2_model, item2_id]
