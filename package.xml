@@ -10,11 +10,11 @@
   <email>kasper.garnaes@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2006-01-18</date>
- <time>15:54:35</time>
+ <date>2009-04-29</date>
+ <time>21:30:00</time>
  <version>
-  <release>0.0.1</release>
-  <api>0.0.1</api>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -27,6 +27,8 @@
    <file role="data" name="README" />
    <file role="data" name="LICENSE" />
    <dir name="config">
+    <file role="data" name="app.yml" />
+    <file role="data" name="config.php" />
     <!-- model -->
     <file role="data" name="schema.yml" />
    </dir>
@@ -34,18 +36,18 @@
     <dir name="behavior">
      <file role="data" name="sfPropelActAsSlopeOneRateableBehavior.php" />
      <file role="data" name="sfPropelActAsSlopeOneRaterBehavior.php" />
-     <file role="data" name="sfSlopeOneRecommendation.php" />
+     <file role="data" name="sfPropelSlopeOneRecommendation.php" />
     </dir>
     <dir name="builder">
-     <file role="data" name="SlopeOneBuilder.php" />
-     <file role="data" name="SlopeOneMySqlBuilder.php" />
-     <file role="data" name="SlopeOnePhpBuilder.php" />
-     <file role="data" name="SlopeOneSqlParser.php" />
+     <file role="data" name="sfPropelSlopeOneBuilder.php" />
+     <file role="data" name="sfPropelSlopeOneMySqlBuilder.php" />
+     <file role="data" name="sfPropelSlopeOnePhpBuilder.php" />
     </dir>
     <dir name="task">
      <file role="data" name="sfSlopeOneBuildMysqlTask.class.php" />
      <file role="data" name="sfSlopeOneBuildPhpTask.class.php" />
     </dir>
+    <file role="data" name="sfPropelSlopeOneSqlParser.php" />
    </dir>
    <dir name="test">
    	<dir name="bootstrap">
@@ -53,7 +55,7 @@
    		<file name="unit.php" role="data"></file>
    	</dir>
    	<dir name="unit">
-   		<file name="slopeOneRecommendationTest.php" role="data"></file>
+   		<file name="sfPropelSlopeOneRecommendationTest.php" role="data"></file>
    	</dir>
    </dir>
   </dir>
@@ -70,8 +72,8 @@
     <name>symfony</name>
     <channel>pear.symfony-project.com</channel>
     <min>1.2.0</min>
-    <max>1.2.0</max>
-    <exclude>1.2.0</exclude>
+    <max>1.3.0</max>
+    <exclude>1.3.0</exclude>
    </package>
   </required>
  </dependencies>
