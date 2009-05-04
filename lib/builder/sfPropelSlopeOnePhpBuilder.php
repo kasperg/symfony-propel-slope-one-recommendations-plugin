@@ -1,8 +1,30 @@
 <?php
+/*
+ * This file is part of the sfPropelActAsRatableBehavior package.
+ *
+ * (c) 2009 Kasper Garnæs <kasper.garnaes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+/**
+ * Class which performs maintainance of the Slope One data table using PHP and
+ * standard SQL.
+ * 
+ * This implementation is based on the 
+ * OpenSlopeOne project by Chaoqun Fu, http://code.google.com/p/openslopeone/.
+ * 
+ * @package    symfony
+ * @subpackage plugin
+ * @author     Kasper Garnæs <kasper.garnaes@gmail.com>
+ */
 class sfPropelSlopeOnePhpBuilder extends sfPropelSlopeOneBuilder
 {
 	
+	/**
+	 * Performs maintenance of the Slope One table using PHP and stanfard SQL.
+	 */
 	public function build()
 	{
 		$this->reset();

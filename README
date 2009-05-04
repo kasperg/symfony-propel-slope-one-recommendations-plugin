@@ -3,25 +3,24 @@
 sfPropelSlopeOneRecommendation is a symfony plugin that enables collaborative filtering based on the [Slope One algorithms](http://en.wikipedia.org/wiki/Slope_One). The plugin supports two scenarios:
 
 * Recommending new items to a user based on his/her previous ratings 
-* Recommend other items with similar ratings to a specific item 
+* Recommending other items with similar ratings to a specific item 
 
-sfPropelSlopeOneRecommendation consists of Propel behaviors for retrieving recommendations and tasks
-for maintaining the underlying datastructure for the recommendations.
+sfPropelSlopeOneRecommendation consists of Propel behaviors for retrieving recommendations and tasks for maintaining the underlying datastructure for the recommendations.
 
 This plugin supports but does not require [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlugin) for user management and [sfPropelActAsRatableBehaviorPlugin](http://www.symfony-project.org/plugins/sfPropelActAsRatableBehaviorPlugin) for ratings through flexible configuration options. 
 
 
 ## Installation
 
-* Install the plugin
+* Install the plugin:
 		
 		> php symfony plugin-install http://plugins.symfony-project.com/sfPropelSlopeOneRecommendationPlugin
 
-* If not already done, enabled behaviors in config/propel.ini:
+* If not already done, enable behaviors in ``config/propel.ini``:
 
 		> propel.builder.addBehaviors = true
 
-* Rebuild the model
+* Rebuild the model:
 
  		> php symfony propel-build-model
 		> php symfony propel-build-sql
@@ -30,7 +29,7 @@ This plugin supports but does not require [sfGuardPlugin](http://www.symfony-pro
 
 		> php symfony propel-insert-sql
 
-or you can create the new table by using the generated SQL statements in data/sql/plugins.sfPropelSlopeOneRecommendationPlugin.lib.model.schema.sql
+or you can create the new table by using the generated SQL statements in ``data/sql/plugins.sfPropelSlopeOneRecommendationPlugin.lib.model.schema.sql``
 
 * Clear the cache
 
@@ -41,7 +40,7 @@ or you can create the new table by using the generated SQL statements in data/sq
 
 If you use the default configuration of [sfPropelActAsRatableBehaviorPlugin](http://www.symfony-project.org/plugins/sfPropelActAsRatableBehaviorPlugin) then sfPropelSlopeOneRecommendationPlugin does not require further configuration.
 
-If you use another method for handling user ratings then copy the content from the sample app.yml provided with the plugin to your application app.yml:  
+If you use another method for handling user ratings then copy the content from the sample ``app.yml`` provided with the plugin to your application ``app.yml``:  
 
 * The table which holds user item ratings
 
@@ -72,13 +71,14 @@ sfPropelSlopeOneRecommendationPlugin supports two types of recommendations:
 * Recommendations of new items to a user based on his/her previous ratings 
 * Recommendations of other items with similar ratings to a specific item 
 
+
 #### User recommendations
 
 To retrieve recommendations of new items to a user based on his/her previous ratings the user class must have the ``sfPropelActAsSlopeOneRaterBehavior``.
 
 This can be added in two ways:
 
-* In schema.yml (since symfony 1.1)
+* In ``schema.yml`` (since symfony 1.1)
 		
 		propel:
 			user:
@@ -102,13 +102,14 @@ When the behavior has been added you can now call ``getRecommendations($itemClas
 
 The recommendations are always ordered with the best recommendation first. Recommendations never contain objects which the user has already rated so if the user has rated all objects then ``getRecommendations()`` will return an empty array.
 
+
 #### Item recommendations
 
 To retrieve recommendations of other items with similar ratings to a specific item the item class must have the ``sfPropelActAsSlopeOneRateableBehavior``.
 
 This can be added in two ways:
 
-* In schema.yml (since symfony 1.1)
+* In ``schema.yml`` (since symfony 1.1)
 		
 		propel:
 			item:
@@ -132,6 +133,7 @@ When the behavior has been added you can now call ``getRecommendations($numRecom
 
 The recommendations are always ordered with the best recommendation first.
 
+
 #### Recommendation objects
 
 The objects returned by the two ``getRecommendations()`` will actually be of type ``sfSlopeOneRecommendation``. This class implements two methods:
@@ -152,11 +154,11 @@ The Slope One implementation used in this plugin uses a database table containin
 
 To maintain this you can invoke either of the provided tasks:
 
-* The MySQL task creates a *slope_one* stored procedure for maintaining the table and executes this. This will usually be faster than running the PHP task. This is recommended for production use if your MySQL version supports stored procedures (MySQL 5.1 and up).
+* The MySQL task creates a ``slope_one`` stored procedure for maintaining the table and executes this. This will usually be faster than running the PHP task. This is recommended for production use if you use MySQL 5.1 verson which supports stored procedures.
 
 		> php symfony slopeone:build-mysql
 	
-* The PHP task uses a combination of PHP and MySQL queries for maintaining the data.
+* The PHP task uses a combination of PHP and standard SQL queries for maintaining the data.
 
 		> php symfony slopeone:build-php
 

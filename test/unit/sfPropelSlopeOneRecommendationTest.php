@@ -1,4 +1,17 @@
 <?php
+/*
+ * This file is part of the sfPropelActAsRatableBehavior package.
+ *
+ * (c) 2009 Kasper Garnæs <kasper.garnaes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * The unit test assumes that sfGuardPlugin is installed and that the model 
+ * class Item is defined. 
+ */
 
 include(dirname(__FILE__).'/../bootstrap/unit.php');
 

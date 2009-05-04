@@ -1,8 +1,32 @@
 <?php
+/*
+ * This file is part of the sfPropelActAsRatableBehavior package.
+ *
+ * (c) 2009 Kasper Garnæs <kasper.garnaes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+/**
+ * Class which performs maintainance of the Slope One data table using a MySQL
+ * stored procedure.
+ * 
+ * This implementation is based on the 
+ * OpenSlopeOne project by Chaoqun Fu, http://code.google.com/p/openslopeone/.
+ * 
+ * @package    symfony
+ * @subpackage plugin
+ * @author     Kasper Garnæs <kasper.garnaes@gmail.com>
+ */
 class sfPropelSlopeOneMySqlBuilder extends sfPropelSlopeOneBuilder
 {
-	
+
+	/**
+	 * Performs maintenance of the Slope One table using MySQL procedure.
+	 * 
+	 * Fast and recommended for production use.
+	 */
 	public function build()
 	{
     if (!$this->hasProcedure())
@@ -16,6 +40,11 @@ class sfPropelSlopeOneMySqlBuilder extends sfPropelSlopeOneBuilder
 		$connection->query('call slope_one');
 	}
 	
+	/**
+	 * Determines whether the Slope One stored procedure has been created.
+	 *
+	 * @return bool Whether the Slope One stored procedure has been created
+	 */
 	private function hasProcedure()
 	{
     $sql = 'SHOW PROCEDURE STATUS
@@ -26,6 +55,9 @@ class sfPropelSlopeOneMySqlBuilder extends sfPropelSlopeOneBuilder
     return (bool) $result->fetch();		
 	}
 
+	/**
+	 * Creates the Slope One stored procedure.
+	 */
   private function createProcedure()
   {
 		$sql = 'CREATE PROCEDURE `slope_one`()
@@ -62,12 +94,20 @@ class sfPropelSlopeOneMySqlBuilder extends sfPropelSlopeOneBuilder
     $connection->query($this->sqlParser->parse($sql));
   }
   
+  /**
+   * Removes the Slope One stored procedure.
+   */
   private function deleteProcedure()
   {
   	$connection = Propel::getConnection();
     $connection->query('DROP PROCEDURE IF EXISTS `slope_one`');
   }
   
+  /**
+   * Returns the name of the database which is used by Propel
+   *
+   * @return string the name of the database which is used by Propel
+   */
   private function getDatabaseName()
   {
   	$config = Propel::getConfiguration();
