@@ -31,8 +31,8 @@ class sfPropelSlopeOneSqlParser
 	public function __construct() {
 		$this->ratingTable = sfConfig::get('app_sf_slope_one_recommendation_plugin_rating_table', 'sf_ratings');
 		$this->raterIdColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rater_id_column', 'user_id');
-		$this->rateableIdColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rateable_id_column', 'ratable_model');
-		$this->rateableModelColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rateable_model_column', 'ratable_id');
+		$this->rateableIdColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rateable_id_column', 'ratable_id');
+		$this->rateableModelColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rateable_model_column', 'ratable_model');
 		$this->ratingColumn = sfConfig::get('app_sf_slope_one_recommendation_plugin_rating_column', 'rating');
 	}
 	
