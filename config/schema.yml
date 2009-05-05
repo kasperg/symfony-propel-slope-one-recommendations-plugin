@@ -1,5 +1,5 @@
 propel:
-  _attributes:    { package: plugins.sfPropelSlopeOneRecommendationPlugin.lib.model }
+  _attributes:    { package: plugins.sfPropelSlopeOneRecommendationsPlugin.lib.model }
   sf_slope_one:
     _attributes:  { phpName: sfSlopeOne }
     id:

@@ -1,11 +1,11 @@
-# sfPropelSlopeOneRecommendation plugin
+# sfPropelSlopeOneRecommendationPlugin
 
-sfPropelSlopeOneRecommendation is a symfony plugin that enables collaborative filtering based on the [Slope One algorithms](http://en.wikipedia.org/wiki/Slope_One). The plugin supports two scenarios:
+sfPropelSlopeOneRecommendationPlugin is a symfony plugin that enables collaborative filtering based on the [Slope One algorithms](http://en.wikipedia.org/wiki/Slope_One). The plugin supports two scenarios:
 
 * Recommending new items to a user based on his/her previous ratings 
 * Recommending other items with similar ratings as a specific item 
 
-sfPropelSlopeOneRecommendation consists of Propel behaviors for retrieving recommendations and tasks for maintaining the underlying datastructure for the recommendations.
+sfPropelSlopeOneRecommendationPlugin consists of Propel behaviors for retrieving recommendations and tasks for maintaining the underlying datastructure for the recommendations.
 
 This plugin supports but does not require [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlugin) for user management and [sfPropelActAsRatableBehaviorPlugin](http://www.symfony-project.org/plugins/sfPropelActAsRatableBehaviorPlugin) for ratings through flexible configuration options. 
 
