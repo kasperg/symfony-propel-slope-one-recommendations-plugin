@@ -14,7 +14,7 @@ This plugin supports but does not require [sfGuardPlugin](http://www.symfony-pro
 
 * Install the plugin
 		
-		> php symfony plugin-install http://plugins.symfony-project.com/sfPropelSlopeOneRecommendationPlugin
+		> php symfony plugin-install http://plugins.symfony-project.com/sfPropelSlopeOneRecommendationsPlugin
 
 * If not already done, enabled behaviors in ``config/propel.ini``:
 
@@ -29,7 +29,7 @@ This plugin supports but does not require [sfGuardPlugin](http://www.symfony-pro
 
 		> php symfony propel-insert-sql
 
-or you can create the new table by using the generated SQL statements in ``data/sql/plugins.sfPropelSlopeOneRecommendationPlugin.lib.model.schema.sql``.
+or you can create the new table by using the generated SQL statements in ``data/sql/plugins.sfPropelSlopeOneRecommendationsPlugin.lib.model.schema.sql``.
 
 * Clear the cache
 
@@ -38,7 +38,7 @@ or you can create the new table by using the generated SQL statements in ``data/
 
 ## Configuration
 
-If you use the default configuration of [sfPropelActAsRatableBehaviorPlugin](http://www.symfony-project.org/plugins/sfPropelActAsRatableBehaviorPlugin) then sfPropelSlopeOneRecommendationPlugin does not require further configuration.
+If you use the default configuration of [sfPropelActAsRatableBehaviorPlugin](http://www.symfony-project.org/plugins/sfPropelActAsRatableBehaviorPlugin) then sfPropelSlopeOneRecommendationsPlugin does not require further configuration.
 
 If you use another method for handling user ratings then copy the content from the sample ``app.yml`` provided with the plugin to your application ``app.yml``:  
 
@@ -66,7 +66,7 @@ If you use another method for handling user ratings then copy the content from t
 
 ### Recommendations
 
-sfPropelSlopeOneRecommendationPlugin supports two types of recommendations:
+sfPropelSlopeOneRecommendationsPlugin supports two types of recommendations:
 
 * Recommendations of new items to a user based on his/her previous ratings 
 * Recommendations of other items with similar ratings as a specific item 
@@ -185,7 +185,7 @@ It is also possible to invoke the maintenance programmatically:
 
 The Slope One algorithmns were introduced in [*Slope One Predictors for Online Rating-Based Collaborative Filtering*](http://www.daniel-lemire.com/fr/abstracts/SDM2005.html) by Daniel Lemire and Anna Maclachlan. 
 
-sfPropelSlopeOneRecommendationPlugin is heavily inspired by the [OpenSlopeOne project](http://code.google.com/p/openslopeone/) by Chaoqun Fu.
+sfPropelSlopeOneRecommendationsPlugin is heavily inspired by the [OpenSlopeOne project](http://code.google.com/p/openslopeone/) by Chaoqun Fu.
 
     
 ## TODO / Ideas
